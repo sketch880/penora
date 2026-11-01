@@ -52,7 +52,7 @@ function ChatContent() {
     }
 
     // پروفایل فرستنده‌ها را جداگانه می‌گیریم
-    const senderIds = [...new Set((data || []).map((m: any) => m.sender_id))];
+    const senderIds = Array.from(new Set((data || []).map((m: any) => m.sender_id)));
     let profilesMap: Record<string, any> = {};
 
     if (senderIds.length > 0) {
